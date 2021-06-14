@@ -1,14 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ButtonElement from "./ButtonElement";
 import TextElement from "./TextElement";
 import DisplayElement from "./DisplayElement";
 
 const Parent: React.FC = () => {
-
     const dates = [{}, {}]
-    const showInfo = false
+    const today = new Date()
+    const thisYear = today.getFullYear()
+    const [showInfo, setShowInfo] = useState<boolean>(false)
 
-    const handleClick = () => {
+    function prepareDates () {
         console.log('hello')
     }
 
@@ -16,6 +17,7 @@ const Parent: React.FC = () => {
         <div>
             <TextElement />
             <DisplayElement dates={dates} showInfo={showInfo} />
+            <ButtonElement />
             Days until
 
         </div>

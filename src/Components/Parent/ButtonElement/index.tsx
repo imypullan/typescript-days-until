@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 interface Props {
-
+    handleClick: () => void
 }
 
 const ButtonElement: React.FC = () => {
