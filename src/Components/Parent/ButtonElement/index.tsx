@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
 
-const ButtonElement = (e: React.MouseEvent<HTMLButtonElement>) => {
+interface Props {
+
+}
+
+const ButtonElement: React.FC = () => {
     return (
         <div>
             <button>Show days until</button>
