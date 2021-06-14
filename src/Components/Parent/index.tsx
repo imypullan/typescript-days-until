@@ -36,7 +36,7 @@ const Parent: React.FC = () => {
         calculateDaysUntil()
         setShowInfo(true)
    }
-   
+
    const checkDateIsFuture = () => {
         dates.map(date => (
             date.numericDate < today? date.numericDate.setFullYear((thisYear + 1)) : date.numericDate
