@@ -6,7 +6,9 @@ import DisplayElement from "./DisplayElement";
 interface Props {
     dates: Array<object>,
     showInfo: boolean,
-    handleClick: () => void
+    prepareDates: (e: React.MouseEvent<HTMLButtonElement>) => void,
+    today: Object,
+    thisYear: Object
 }
 
 const Parent: React.FC = () => {
@@ -37,28 +39,26 @@ const Parent: React.FC = () => {
         setShowInfo(true)
    }
 
-   const checkDateIsFuture = () => {
+   const checkDateIsFuture = (): void => {
         dates.map(date => (
             date.numericDate < today? date.numericDate.setFullYear((thisYear + 1)) : date.numericDate
             )
         )
    }
 
-   const calculateDaysUntil = () => {
+   const calculateDaysUntil = (): void => {
         const msInDay = 1000 * 60 * 60 * 24
         dates.map(date => (
             date.daysUntil = Math.round((date.numericDate.getTime() - today.getTime()) /msInDay)
         ))
    }
 
-
     return (
         <div>
             <TextElement />
             <DisplayElement dates={dates} showInfo={showInfo} />
-            <ButtonElement />
-            Days until
-
+            {/*This isn't passing down for some reason*/}
+            {/*<ButtonElement handeClick={prepareDates}/>*/}
         </div>
     )
 }

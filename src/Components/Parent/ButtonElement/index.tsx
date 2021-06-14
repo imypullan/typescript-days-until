@@ -7,7 +7,8 @@ interface Props {
 const ButtonElement: React.FC = (props) => {
     return (
         <div>
-            <button>Show days until</button>
+            {/*This doesn't work*/}
+            {/*<button onClick={props.handleClick}>Show days until</button>*/}
         </div>
     )
 }

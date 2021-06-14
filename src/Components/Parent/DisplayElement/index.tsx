@@ -5,11 +5,16 @@ interface Props {
     showInfo: boolean
 }
 
-const DisplayElement: React.FC<Props> = () => {
+const DisplayElement: React.FC<Props> = (props) => {
     return (
         <div>
             <ul>
-                <li>Some stuff will go here</li>
+                {/*This doesn't work but I think it might be because these aren't strictly state? Altho if you look in the Components on devtools they are present*/}
+                {/*{props.dates.map(date => (*/}
+                {/*    <li key={date.name}>*/}
+                {/*        {date.daysUntil} days until {date.name}*/}
+                {/*    </li>*/}
+                {/*))}*/}
             </ul>
         </div>
     )
