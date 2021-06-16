@@ -4,11 +4,10 @@ interface Props {
     handleClick: () => void
 }
 
-const ButtonElement: React.FC = (props) => {
+const ButtonElement: React.FC<Props> = (props) => {
     return (
         <div>
-            {/*This doesn't work*/}
-            {/*<button onClick={props.handleClick}>Show days until</button>*/}
+            <button onClick={() => props.handleClick()}>Show days until</button>
         </div>
     )
 }

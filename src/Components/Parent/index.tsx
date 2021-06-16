@@ -35,13 +35,15 @@ const Parent: React.FC = () => {
 
    const prepareDates = (): void => {
         checkDateIsFuture()
+         console.log(dates)
         calculateDaysUntil()
         setShowInfo(true)
    }
 
    const checkDateIsFuture = (): void => {
         dates.map(date => (
-            date.numericDate < today? date.numericDate.setFullYear((thisYear + 1)) : date.numericDate
+            date.numericDate < today?
+                date.numericDate.setFullYear((thisYear + 1)) : date.numericDate
             )
         )
    }
@@ -57,8 +59,7 @@ const Parent: React.FC = () => {
         <div>
             <TextElement />
             <DisplayElement dates={dates} showInfo={showInfo} />
-            {/*This isn't passing down for some reason*/}
-            {/*<ButtonElement handeClick={prepareDates}/>*/}
+            <ButtonElement handleClick={prepareDates}/>
         </div>
     )
 }
