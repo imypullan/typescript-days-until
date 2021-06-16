@@ -13,6 +13,7 @@ interface Props {
 
 const DisplayElement: React.FC<Props> = (props) => {
 
+
     return (
         <div style={{display: props.showInfo? "block" : "none"}}>
             <ul>

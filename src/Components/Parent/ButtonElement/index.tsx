@@ -1,6 +1,12 @@
 import React, {useState} from 'react'
 
+interface Date {
+    name: string,
+    daysUntil: number
+}
+
 interface Props {
+    dates: Array<Date>,
     handleClick: () => void
 }
 

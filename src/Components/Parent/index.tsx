@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ButtonElement from "./ButtonElement";
 import TextElement from "./TextElement";
 import DisplayElement from "./DisplayElement";
@@ -31,12 +31,10 @@ const Parent: React.FC = () => {
             daysUntil: 0
         }
     ]
+
     const [showInfo, setShowInfo] = useState<boolean>(false)
 
    const prepareDates = (): void => {
-        checkDateIsFuture()
-         console.log(dates)
-        calculateDaysUntil()
         setShowInfo(true)
    }
 
@@ -55,11 +53,16 @@ const Parent: React.FC = () => {
         ))
    }
 
+   checkDateIsFuture()
+    calculateDaysUntil()
+
+
+
     return (
         <div>
             <TextElement />
             <DisplayElement dates={dates} showInfo={showInfo} />
-            <ButtonElement handleClick={prepareDates}/>
+            <ButtonElement dates={dates} handleClick={prepareDates}/>
         </div>
     )
 }
